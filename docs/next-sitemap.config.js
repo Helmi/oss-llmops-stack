@@ -10,6 +10,7 @@ module.exports = {
         changefreq: 'daily',
         lastmod: new Date().toISOString()
     }],
+    outDir: "out",
     exclude: [
         // Exclude _meta files
         '*/_meta',

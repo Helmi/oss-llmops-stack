@@ -2,7 +2,7 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const path = require('path');
 
-const SITEMAP_PATH = 'public/sitemap-0.xml';
+const SITEMAP_PATH = 'out/sitemap-0.xml';
 const TITLE = 'OSS LLMOps Stack';
 const INTRO_DESCRIPTION = 'Lorem Ipsum.';
 const MAIN_SECTIONS = [
@@ -87,7 +87,7 @@ async function generateLLMsList() {
         }
 
         // Write to llms.txt
-        const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
+        const outputPath = path.join(process.cwd(), 'out', 'llms.txt');
         fs.writeFileSync(outputPath, markdownContent);
 
         console.log('Successfully generated llms.txt');
