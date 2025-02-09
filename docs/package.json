@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && pnpm run postbuild",
-    "postbuild": "pnpm run postbuild:sitemap && pnpm run postbuild:cleanup && pnpm run postbuild:llms-txtpnpm run postbuild:sitemap && pnpm run postbuild:cleanup && pnpm run postbuild:llms-txtpnpm run postbuild:sitemap && pnpm run postbuild:cleanup && pnpm run postbuild:llms-txtpnpm run postbuild:sitemap && pnpm run postbuild:cleanup && pnpm run postbuild:llms-txt",
+    "postbuild": "pnpm run postbuild:sitemap && pnpm run postbuild:cleanup && pnpm run postbuild:llms-txt",
     "start": "next start",
     "postbuild:sitemap": "next-sitemap",
     "postbuild:cleanup": "echo 'Removing .next/cache to resolve Nextra caching bug' && rm -rf .next/cache",
