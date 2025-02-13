@@ -31,28 +31,15 @@ You can [deploy](/docs) this stack in a matter of minutes via the templates (HEL
 
 Many teams are using this stack in production, some quotes by active contributors and users:
 
-> “”
+> "Generative AI technology evolves at an unprecedented rate. LiteLLM is an amazing product that helps our Engineering teams quickly prototype, launch, and deliver new AI features at scale. Langfuse instrumentation gives our teams the visibility to quickly pinpoint issues across our LLMops stack and resolve them in minutes. Together, these products are essential at Fletch and consistently deliver best-in-class experiences for our customers."
 >
-> — firstname lastname, title
+> — Darien Kindlund, VP of Technology at Fletch
 
-> “”
+> "Using LiteLLM with Langfuse has significantly improved our ability to easily monitor our LLM usage across all of our applications at ai.moda. It's like Sentry, but for AI!"
 >
-> — firstname lastname, title
-
-> “”
->
-> — firstname lastname, title
+> — David Manouchehri, Director at ai.moda
 
 Read on to learn more about the stack.
-
-## The Challenge of Building Reliable LLM Applications
-
-Building reliable LLM applications requires a stack that balances flexibility, observability, and control. Common problems of teams building LLM applications:
-
-- **Model Selection** – With the rapid evolution of LLMs, teams need the ability to switch between different models and providers seamlessly. Some models may be better suited for cost efficiency, while others offer superior accuracy or response time. Different vendors have different APIs which can lead to lock-in and slower experimentation with new models.
-- **Observability & Debugging** – LLM applications often use LLMs repeatedly and each step can lead to trace errors, latency issues, and suboptimal responses. Developers need tools to capture logs/traces, analyze model outputs, and track request flows in production to continuously improve system reliability.
-- **Evaluating Free-Form Outputs** – Unlike deterministic software systems, LLMs generate varied responses, making evaluation non-trivial. Automated scoring, human-in-the-loop validation, and structured testing are necessary to ensure high-quality outputs across different use cases.
-- **Collaborative Prompt Engineering** – LLM applications are often built by cross-functional teams where domain experts are in charge of prompt experimentation and annotation. When prompts are part of the application code it is often difficult to iterate quickly as developers need to be involved to change them.
 
 ## LiteLLM
 
@@ -149,10 +136,11 @@ By adopting the **Open-Source LLM Ops Stack**, teams gain:
 
 Deploying the stack is straightforward:
 
-1. **Deploy LiteLLM and Langfuse** – Run locally or in the cloud.
-2. **Setup Integration** – Enable callbacks from LiteLLM to Langfuse.
-3. **Replace model endpoints with LiteLLM** – Use LiteLLM gateway endpoints across your application.
-4. **Done**
+1. Deploy LiteLLM and Langfuse
+2. Setup Integration by enabling callbacks from LiteLLM to Langfuse
+3. Use LiteLLM gateway endpoints across your application
+4. (optional) Setup evals and prompt management in Langfuse
+5. Done
 
 👉 [Follow the step-by-step tutorial here](/docs)
 
