@@ -58,22 +58,22 @@ Building reliable LLM applications requires a stack that balances flexibility, o
 
 > Model Routing, API Unification, Cost Management, Model Access Management
 
-[LiteLLM](https://docs.litellm.ai/docs) is an open-source framework that simplifies LLM usage by providing a unified API for interacting with multiple LLM providers. It offers teams:
+[**LiteLLM**](https://docs.litellm.ai/docs) is an open-source framework that simplifies LLM usage by providing a unified API for interacting with multiple LLM providers. It offers teams:
 
-### 1. Model Routing & API Unification
+**Model Routing & API Unification**
 
 - **OpenAI-Compatible API** – Access 100+ LLMs in the OpenAI format: Bedrock, VertexAI, Anthropic, Hugging Face, vLLM and more.
 - **Built-in failover mechanisms** – Automatically switch to alternative models if a provider is down.
 - **Load balancing** – Distribute traffic efficiently across multiple LLMs for scalability and reliability.
 
-### 2. Observability & Cost Management
+**Observability & Cost Management**
 
 - **Logging & request tracking** – Capture logs of all requests and responses for debugging and analysis.
 - **Model Access Controls** \- Control access to models by virtual keys, teams
 - **Budgets & Rate Limits** \- Track spend and set budget limits across models, keys, teams and custom tags
 - **Prompt versioning & A/B testing** – Manage different prompt iterations and compare effectiveness.
 
-### 3. Model Access Management
+**Model Access Management**
 
 - **Virtual Keys** – Control access to models by virtual keys, teams and model access groups
 - **Self-serve Portal (SSO) \-** Allow teams to login via SSO and manage their own keys in production with a self-serve key management portal
@@ -82,33 +82,25 @@ Building reliable LLM applications requires a stack that balances flexibility, o
 
 > Observability, Evaluation, and Prompt Management
 
-\<Video with 10 min intro to Langfuse, [langfuse.com/watch-demo](http://langfuse.com/watch-demo)\>
+<iframe
+  width="100%"
+  className="aspect-[16/9] rounded border w-full mt-10"
+  src="https://www.youtube-nocookie.com/embed/2E8iTvGo9Hs?si=bT3wbaxdv2DIBCBo"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
 
-[Langfuse](https://langfuse.com/docs) complements LiteLLM by offering deep visibility and structured evaluations for LLM-powered applications. It is designed around three core capabilities:
+[**Langfuse**](https://langfuse.com/docs) complements LiteLLM by offering deep visibility and structured evaluations for LLM-powered applications. These are the core capabilities of Langfuse:
 
-### 1. Observability
-
-- **Trace and monitor** multi-step LLM workflows, identifying bottlenecks or failure points.
-- **Track cost and latency metrics** to optimize LLM spending.
-- **Compare models** side-by-side to determine which is most effective for a given task.
-- **Enable real-time debugging** to trace LLM requests and responses effectively.
-- **Public APIs** to build custom workflows based on the data in Langfuse.
-
-### 2. Evaluation
-
-- **Evaluate responses** with **both automatic and human-driven** assessments.
-- **Custom evaluation** via the API and SDKs to build external eval workflows or track user feedback.
-- **Manage datasets for evaluations** – Create labeled datasets from production traces for structured performance assessment.
-- **Experiment with different models and workflows** – Test and refine LLM interactions without modifying production systems.
-
-### 3. Prompt Management
-
-- **Collaborative Editing** – Change prompts via UI, API, or SDKs.
-- **Versioning & Experimentation** – Store, track, and test different prompt versions efficiently.
-- **Deployment** – Use deployment labels to assign prompt versions to different environments and quickly deploy or rollback prompt versions.
-- **Production Readiness** – Use prompts in application code with no added latency impact due to SDK-level caching.
-- **Interactive Playground** – Iterate on prompts within the Langfuse interface for real-time improvements.
-- **Prompt-level Metrics** – Break down cost/quality/latency metrics by different prompt versions to understand the impact of changes.
+- [**LLM Application Observability**](https://langfuse.com/docs/tracing): Instrument your app and start ingesting traces to Langfuse, thereby tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions. Inspect and debug complex logs and user sessions. Try the interactive [demo](https://langfuse.com/docs/demo) to see this in action.
+- [**Prompt Management**](https://langfuse.com/docs/prompts/get-started) helps you centrally manage, version control, and collaboratively iterate on your prompts. Thanks to strong caching on server and client side, you can iterate on prompts without adding latency to your application.
+- [**Evaluations**](https://langfuse.com/docs/scores/overview) are key to the LLM application development workflow, and Langfuse adapts to your needs. It supports LLM-as-a-judge, user feedback collection, manual labeling, and custom evaluation pipelines via APIs/SDKs.
+- [**Datasets**](https://langfuse.com/docs/datasets/overview) enable test sets and benchmarks for evaluating your LLM application. They support continuous improvement, pre-deployment testing, structured experiments, flexible evaluation, and seamless integration with frameworks like LangChain and LlamaIndex.
+- [**LLM Playground**](https://langfuse.com/docs/playground) is a tool for testing and iterating on your prompts and model configurations, shortening the feedback loop and accelerating development. When you see a bad result in tracing, you can directly jump to the playground to iterate on it.
+- [**Comprehensive API**](https://langfuse.com/docs/api): Langfuse is frequently used to power bespoke LLMOps workflows while using the building blocks provided by Langfuse via the API. OpenAPI spec, Postman collection, and typed SDKs for Python, JS/TS are available.
 
 ## Integration
 
