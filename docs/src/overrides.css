@@ -50,3 +50,21 @@ details>div {
 details>summary {
   font-weight: 700;
 }
+
+
+/* Show light/dark images in mermaid diagrams */
+.show-light {
+  display: block !important;
+}
+
+.dark .show-light {
+  display: none !important;
+}
+
+.show-dark {
+  display: none !important;
+}
+
+.dark .show-dark {
+  display: block !important;
+}
