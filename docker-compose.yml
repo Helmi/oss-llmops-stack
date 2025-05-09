@@ -130,8 +130,8 @@ services:
       - langfuse_minio_data:/data
     healthcheck:
       test: ["CMD", "mc", "ready", "local"]
-      interval: 1s
-      timeout: 5s
+      interval: 3s
+      timeout: 15s
       retries: 5
       start_period: 1s
 
@@ -140,7 +140,7 @@ services:
     restart: always
     command: --requirepass ${SERVICE_PASSWORD_REDIS}
     healthcheck:
-      test: ["CMD", "redis-cli", "-a", "${SERVICE_PASSWORD_REDIS}", "ping"]
+      test: ["CMD", "redis-cli", "ping"]
       interval: 3s
       timeout: 10s
       retries: 10
