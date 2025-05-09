@@ -96,12 +96,6 @@ services:
       - LANGFUSE_INIT_USER_EMAIL=${LANGFUSE_ADMIN_EMAIL:-admin@example.com}
       - LANGFUSE_INIT_USER_NAME=${LANGFUSE_ADMIN_NAME:-Admin User}
       - LANGFUSE_INIT_USER_PASSWORD=${LANGFUSE_ADMIN_PASSWORD}
-    healthcheck:
-        test: ["CMD-SHELL", "wget -q --spider --tries=1 --timeout=5 http://localhost:3000/ || exit 1"]
-        interval: 10s
-        timeout: 5s
-        retries: 5
-        start_period: 10s
 
   clickhouse:
     image: clickhouse/clickhouse-server
@@ -135,7 +129,7 @@ services:
     volumes:
       - langfuse_minio_data:/data
     healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
+      test: ["CMD-SHELL", "wget -q --spider --tries=1 --timeout=5 http://localhost:9000/minio/health/ready || exit 1"]
       interval: 1s
       timeout: 5s
       retries: 5
@@ -146,7 +140,7 @@ services:
     restart: always
     command: --requirepass ${SERVICE_PASSWORD_REDIS}
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD", "redis-cli", "-a", "${SERVICE_PASSWORD_REDIS}", "ping"]
       interval: 3s
       timeout: 10s
       retries: 10
