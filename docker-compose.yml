@@ -128,18 +128,18 @@ services:
     volumes:
       - langfuse_minio_data:/data
     healthcheck:
-      test: ["CMD-SHELL", "wget -q --spider --tries=1 --timeout=5 http://localhost:9000/minio/health/ready || exit 1"]
-      interval: 10s
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 1s
       timeout: 5s
-      retries: 6
-      start_period: 10s
+      retries: 5
+      start_period: 1s
 
   redis:
     image: redis:7
     restart: always
     command: --requirepass ${SERVICE_PASSWORD_REDIS}
     healthcheck:
-      test: ["CMD", "redis-cli", "-a", "${SERVICE_PASSWORD_REDIS}", "ping"]
+      test: ["CMD", "redis-cli", "ping"]
       interval: 3s
       timeout: 10s
       retries: 10
