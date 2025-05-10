@@ -12,6 +12,8 @@ model_list:
       api_key: os.environ/OPENAI_API_KEY
 
 litellm_settings:
+  set_verbose: True
+  cache: True
   drop_params: True
   success_callback: ["langfuse"]
 
