@@ -171,6 +171,8 @@ services:
       - "4000"
     environment:
       - DATABASE_URL=postgresql://postgres:${SERVICE_PASSWORD_LITELLM-DB}@litellm-db:5432/postgres
+      - STORE_MODEL_IN_DB=True
+      - STORE_PROMPTS_IN_SPEND_LOGS=True
       - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
       - LITELLM_SALT_KEY=${LITELLM_SALT_KEY}
       - UI_USERNAME=${LITELLM_UI_USERNAME}
