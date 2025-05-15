@@ -1,8 +1,10 @@
-litellm_settings:
-  set_verbose: True
-  cache: True
-  drop_params: True
-  success_callback: ["langfuse"]
-
 general_settings:
+  store_model_in_db: true
+  infer_model_from_keys: false
   master_key: os.environ/LITELLM_MASTER_KEY
+
+litellm_settings:
+  set_verbose: true
+  cache: true
+  drop_params: true
+  success_callback: ["langfuse"]
