@@ -180,10 +180,6 @@ services:
       - LANGFUSE_PUBLIC_KEY=${SERVICE_BASE64_64_LANGFUSEPROJECTPK}
       - LANGFUSE_SECRET_KEY=${SERVICE_BASE64_64_LANGFUSEPROJECTSK}
       - LANGFUSE_HOST=http://langfuse-web:3000
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
     depends_on:
       litellm-db:
         condition: service_healthy
