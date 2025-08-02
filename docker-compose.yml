@@ -1,7 +1,7 @@
 name: oss-llmops-stack
 
 services:
-  langfuse-worker:
+  langfuseworker:
     image: langfuse/langfuse-worker:3
     restart: always
     depends_on:
@@ -42,7 +42,7 @@ services:
       - REDIS_PORT=6379
       - REDIS_AUTH=${SERVICE_PASSWORD_REDIS}
 
-  langfuse-web:
+  langfuseweb:
     image: langfuse/langfuse:3
     restart: always
     depends_on:
@@ -85,7 +85,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_AUTH=${SERVICE_PASSWORD_REDIS}
-      - NEXTAUTH_URL=${SERVICE_FQDN_LANGFUSE_WEB_3000}
+      - NEXTAUTH_URL=${SERVICE_FQDN_LANGFUSEWEB_3000}
       - NEXTAUTH_SECRET=${SERVICE_BASE64_64_NEXTAUTHSECRET}
       - LANGFUSE_INIT_ORG_ID=${LANGFUSE_ORG_ID:-default-org}
       - LANGFUSE_INIT_ORG_NAME=${LANGFUSE_ORG_NAME:-My Organization}
@@ -170,7 +170,7 @@ services:
     ports:
       - "4000"
     environment:
-      - DATABASE_URL=postgresql://postgres:${SERVICE_PASSWORD_LITELLM-DB}@litellm-db:5432/postgres
+      - DATABASE_URL=postgresql://postgres:${SERVICE_PASSWORD_LITELLM_DB}@litellmdb:5432/postgres
       - STORE_MODEL_IN_DB=True
       - STORE_PROMPTS_IN_SPEND_LOGS=True
       - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
@@ -179,12 +179,12 @@ services:
       - UI_PASSWORD=${LITELLM_UI_PASSWORD}
       - LANGFUSE_PUBLIC_KEY=${SERVICE_BASE64_64_LANGFUSEPROJECTPK}
       - LANGFUSE_SECRET_KEY=${SERVICE_BASE64_64_LANGFUSEPROJECTSK}
-      - LANGFUSE_HOST=http://langfuse-web:3000
+      - LANGFUSE_HOST=http://langfuseweb:3000
     depends_on:
-      litellm-db:
+      litellmdb:
         condition: service_healthy
 
-  litellm-db:
+  litellmdb:
     image: postgres:${POSTGRES_VERSION:-latest}
     restart: always
     environment:
