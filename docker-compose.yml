@@ -189,7 +189,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${SERVICE_PASSWORD_LITELLM-DB}
+      - POSTGRES_PASSWORD=${SERVICE_PASSWORD_LITELLM_DB}
       - POSTGRES_DB=postgres
     volumes:
       - litellm-db-data:/var/lib/postgresql/data
