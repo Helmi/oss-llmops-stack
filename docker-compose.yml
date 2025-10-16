@@ -201,17 +201,12 @@ services:
 
 volumes:
   langfuse_postgres_data:
-    external: true
     name: langfuse-postgres-data
   langfuse_clickhouse_data:
-    external: true
     name: langfuse-clickhouse-data
   langfuse_clickhouse_logs:
-    external: true
     name: langfuse-clickhouse-logs
   langfuse_minio_data:
-    external: true
     name: langfuse-minio-data
   litellm-db-data:
-    external: true
     name: litellm-db-data
